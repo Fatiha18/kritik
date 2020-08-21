@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Artist;
+use App\Entity\Label;
 use App\Entity\Record;
 use App\Repository\ArtistRepository;
 use App\Repository\RecordRepository;
@@ -23,7 +24,7 @@ class RecordController extends AbstractController
     }
 
      /**
-     * pade d'un artiste
+     * page d'un artiste
      * @Route("/artist/{id}", name="artist_page")
      */
     public function artistPage(Artist $artist)
@@ -57,6 +58,19 @@ class RecordController extends AbstractController
     {
         return $this->render('record/record_news.html.twig', [
                'record_news' => $repository->findNews(),          
+                ]);
+    }
+
+
+
+     /**
+     * page d'un label
+     * @Route("/label/{id}", name="label_page")
+     */
+    public function labelPage(Label $label)
+    {
+        return $this->render('record/label_page.html.twig', [
+               'label' => $label          
                 ]);
     }
 
