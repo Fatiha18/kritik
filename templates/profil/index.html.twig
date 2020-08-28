@@ -1,0 +1,12 @@
+{% extends "_template.html.twig" %}
+
+{% block title %}
+    <h1>Votre profil</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="section">
+        <h1 class="title">Bonjour: {{ app.user.pseudo }}</h1>
+        {% include 'resetting/form.html.twig'  %}
+    </div>
+{% endblock %}
